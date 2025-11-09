@@ -45,9 +45,9 @@ vim .env
 Set the APP_DOMAIN, APP_URL, DB_USER, DB_PASSWORD, ...
 Do not forget to generate an APP_KEY with `echo "base64:$(openssl rand -base64 32)"`
 
-3. Build and start containers:
+3. Start containers:
 ```bash
-docker compose up -d --build
+docker compose up -d
 ```
 
 ## Services
@@ -73,6 +73,9 @@ docker compose logs panel 2>&1 \
   | grep -A3 "First admin credentials" \
   | sed -E 's/^[^|]*\| //' 
 ```
+
+## Docker Hub
+In the docker-compose the panel's image is pull from my Docker Hub repository https://hub.docker.com/r/savalet/pterodactyl-panel
 
 ## Licence
 

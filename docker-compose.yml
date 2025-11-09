@@ -1,6 +1,6 @@
 services:
   panel:
-    build: .
+    image: savalet/pterodactyl-panel
     container_name: pterodactyl-panel
     env_file:
       - .env
