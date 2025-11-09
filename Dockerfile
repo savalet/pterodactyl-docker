@@ -51,7 +51,7 @@ RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
 # --------------------------------
 # Step 6: Copy entrypoint
 # --------------------------------
-COPY docker-entrypoint.sh /entrypoint.sh
+COPY assets/docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # --------------------------------
@@ -59,7 +59,7 @@ RUN chmod +x /entrypoint.sh
 # -------------------------------
 WORKDIR /etc/nginx/sites-enabled
 RUN rm default
-COPY pterodactyl.conf ./
+COPY assets/nginx/pterodactyl.conf ./
 
 WORKDIR /
 EXPOSE 80
